@@ -8,7 +8,7 @@ class blockchain{
         this.chain = [this.genesis()];
         this.difficulty = 4;
     }
-    //اول بلوك ماراح تكون قبلها بلوك
+    
     genesis(){
         return new block(0,"01/15/2022","The first block","0");
     }
@@ -24,7 +24,7 @@ class blockchain{
         this.chain.push(block);
     }
     valid(){
-        //بديت من واحد علشان الجنسس
+    
         for(let i = 1; i < this.chain.length; i++){
             const currentBlock = this.chain[i];
             const prevBlock = this.chain[i -1 ];
@@ -56,6 +56,7 @@ renad.addBlock(new block(8, "1/6/8888", {amunt :10}));
 renad.addBlock(new block(9, "1/6/8888", {amunt :7}));
 renad.addBlock(new block(10, "1/6/8888", {amunt :40}));
 
+console.log(renad.genesis);
 console.log(JSON.stringify(renad , null , 4));
 console.log('Is blockchain is valid ?  ' + renad.valid()); 
 
